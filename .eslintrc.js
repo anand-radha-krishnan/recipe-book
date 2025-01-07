@@ -23,7 +23,5 @@ module.exports = {
   rules: {
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
-
-    // You can do more rule customizations here...
   },
 };

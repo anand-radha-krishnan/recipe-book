@@ -3,82 +3,42 @@ import { connectClient, stopClient } from "../server/db";
 async function main() {
   const client = await connectClient();
 
-  await client.collection("contests").deleteMany({});
+  await client.collection("Recipes").deleteMany({});
 
-  const resp = await client.collection("contests").insertMany([
+  const resp = await client.collection("Recipes").insertMany([
     {
-      id: "cognitive-building-bricks",
-      categoryName: "Business/Company",
-      contestName: "Cognitive Building Bricks",
-      description: `
-This product is a classroom tool that scaffolds higher order thinking. Its a collaborative strategy that using building bricks to help structure students ideas. Learners build knowledge structures with information (attached to different coloured bricks). Students desks are turned into workshops where they physically manipulate information into meaningful creations. They show sequences of information (like stories), rank information by importance and pretty much all other essential cognitive skills you need at school. The end result is clarity in thought and better collaborative conversations. I want this to be marketed as a sophisticated knowledge tool applicable to all ages and subjects. It gives students the cognitive edge, they get a little more 'RAM'!.
-
-I want to continue with the construction/building theme as well as the mind/brain/learning theme. They need to be blended somehow. Teachers find it easier to talk about building/scaffolding analogies as its less abstract.
-      `,
-      names: [
-        {
-          id: "mind-assembly",
-          name: "Mind Assembly",
-          timestamp: new Date(),
-        },
-        {
-          id: "brain-scaffold",
-          name: "Brain Scaffold",
-          timestamp: new Date(),
-        },
-      ],
+      id: "baked-carrots",
+      name: "Baked carrots",
+      ingredients:
+        "carrots, onion, garlic cloves, olive oil, salt",
+      procdure:
+        "Cut carrots and onion, Put everything together in an oven dish, add olive oil and salt, and mix well. Bake in a preheated oven at 180°C for 20 minutes.",
     },
     {
-      id: "educating-people-about-sustainable-food-production",
-      categoryName: "Magazine/Newsletter",
-      contestName:
-        "Educating people about sustainable food production",
-      description: `
-Educating people about sustainable food production
-      `,
-      names: [],
+      id: "Pimientos-de-Padron",
+      name: "Pimientos de Padron",
+      ingredients: "padrón peppers, olive oil, salt",
+      procdure:
+        "Wash and dry the Pimientos de Padron. Heat olive oil in a pot and fry the peppers until the skin blisters; a few dark spots are okay. Sprinkle with regular salt or Fleur de Sel on the plate and eat promptlyCut carrots and onion, Put everything together in an oven dish, add olive oil and salt, and mix well. Bake in a preheated oven at 180°C for 20 minutes.",
     },
     {
-      id: "big-data-analytics-for-cash-circulation",
-      categoryName: "Software Component",
-      contestName: "Big Data Analytics for Cash Circulation",
-      description: `
-Data is created at every touch point in a notes life-cycle. Because of the volume of the data, it can be difficult to store, analyse and gain insight. Collecting, processing and analysing the data using big data technologies and displaying the results in an interactive display makes it easy to make informative decisions, overcome problem and plan for the future.
-
-It works using big data technologies and displays the results in modern browsers, combining powerful visualisation components and a data-driven approach to interact with the data.
-
-It enables you to analyse data that were not previously possible. The volume, variety, complexity of the analytical processing involved, and the responsiveness required are now achievable with the product. Gaining smarter decision making but also provide faster time to value.
-    `,
-      names: [
-        {
-          id: "cash-view",
-          name: "Cash View",
-          timestamp: new Date(),
-        },
-        {
-          id: "currency-map",
-          name: "Currency Map",
-          timestamp: new Date(),
-        },
-        {
-          id: "cash-board",
-          name: "Cash Board",
-          timestamp: new Date(),
-        },
-      ],
+      id: "broccoli-and-mushroom-stir-fry",
+      name: "Broccoli and Mushroom Stir-Fry",
+      ingredients:
+        "broccoli, mushrooms, garlic cloves, vegetable broth, sesame oil, soy sauce",
+      procdure:
+        "Cut the broccoli, mushrooms and garlic. Heat a pan or wok on high heat, Sear the broccoli for 3 minutes. Add the garlic, vegetable broth, soy sauce for 5 minutes. Add the mushrooms and continue to simmer for another 2 minutes.",
     },
     {
-      id: "free-programming-books",
-      categoryName: "Website",
-      contestName: "Free programming books",
-      description: `
-A list of free online programming books, categorized by languages/topics
-    `,
-      names: [],
+      id: "candied-almonds",
+      name: "Candied almonds",
+      ingredients: "sugar, water, almonds, cinnamon",
+      procdure:
+        "Bring cinnamon, sugar and water to a boil. Add almonds and continue to cook. Then continue stirring until the sugar starts to melt. Place the almonds on baking paper, separate them, and let them cool.",
     },
   ]);
 
-  console.info("Inserted Contests:", resp.insertedCount);
+  console.info("Inserted Recipes:", resp.insertedCount);
 
   stopClient();
 }
