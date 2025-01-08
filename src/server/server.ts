@@ -10,7 +10,7 @@ server.use(express.static("dist"));
 
 server.use("/", (request, response) => {
   response.render("index", {
-    initialContent: "<h1>loadinf...</h1>",
+    initialContent: "<h1>loading...</h1>",
   });
 });
 
