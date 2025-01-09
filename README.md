@@ -1,10 +1,4 @@
-## MNR (MongoDB, Node.js, React.js)
-
-Video Course (recorded August 2022): **[samer.dev/mnr](https://samer.dev/mnr)**
-
-For an up-to-date development environment configuration guide: **[samer.dev/reactful-ts](https://samer.dev/reactful-ts)**
-
-For general help: **[jscomplete.com/help](https://jscomplete.com/help)**
+^## MNR (MongoDB, Node.js, React.js)
 
 ### Reference Text
 
@@ -21,53 +15,35 @@ For general help: **[jscomplete.com/help](https://jscomplete.com/help)**
 
 ```
   "dependencies": {
-    "axios": "^0.27.2",
+    "axios": "^1.7.9",
     "cors": "^2.8.5",
-    "ejs": "^3.1.8",
-    "express": "^4.18.1",
-    "mongodb": "^4.8.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "ts-loader": "^9.3.1",
-    "typescript": "^4.7.4",
-    "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0"
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "mongodb": "^6.12.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.7.2",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "^5.33.0",
-    "eslint": "^8.22.0",
-    "eslint-plugin-react": "^7.30.1",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^2.7.1",
+   "@typescript-eslint/parser": "^8.19.1",
+    "eslint": "^9.17.0",
+    "eslint-plugin-react": "^7.37.3",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "prettier": "^3.4.2",
     "ts-node-dev": "^2.0.0"
   }
 ```
 
-#### Mock Data
+#### Tech Stack
 
-```json
-{
-  "contests": [
-    {
-      "id": "cognitive-building-bricks",
-      "categoryName": "Business/Company",
-      "contestName": "Cognitive Building Bricks"
-    },
-    {
-      "id": "educating-people-about-sustainable-food-production",
-      "categoryName": "Magazine/Newsletter",
-      "contestName": "Educating people about sustainable food production"
-    },
-    {
-      "id": "big-data-analytics-for-cash-circulation",
-      "categoryName": "Software Component",
-      "contestName": "Big Data Analytics for Cash Circulation"
-    },
-    {
-      "id": "free-programming-books",
-      "categoryName": "Website",
-      "contestName": "Free programming books"
-    }
-  ]
-}
+```
+  TypeScript
+  React.js
+  Express.js --> Node.js
+  ejs --> Templating language for HTML markup generation
+  MongoDB
+  Webpack
 ```
