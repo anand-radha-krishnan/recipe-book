@@ -5,7 +5,6 @@ import App from "../components/App";
 
 const serverRender = async (request) => {
   const { recipeId } = request.params;
-  console.log(request.params);
 
   const initialData = recipeId
     ? { currentRecipe: await fetchRecipe(recipeId) }
