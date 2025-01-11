@@ -4,12 +4,14 @@
   "description": "full-stack application with React, Node & MongoDB",
   "main": "index.js",
   "scripts": {
-    "dev:server": "tsnd src/server/server.ts",
+    "dev:server": "npm run dev:bundler & tsnd src/server/server.ts",
     "dev:bundler": "webpack -w --mode=development"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.7.9",
+    "cors": "^2.8.5",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
     "mongodb": "^6.12.0",
