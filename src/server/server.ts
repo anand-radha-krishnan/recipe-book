@@ -1,8 +1,8 @@
 import express from "express";
 import config from "./config";
-import os from "os";
 
 import apiRouter from "./api-router";
+import serverRender from "./render";
 
 const server = express();
 
@@ -12,16 +12,18 @@ server.use(express.static("dist"));
 
 server.use("/api", apiRouter);
 
-server.use("/", (request, response) => {
-  response.render("index", {
-    initialContent: "<h1>loading...</h1>",
-  });
-});
+server.use(
+  ["/recipe/:recipeId", "/"],
+  async (request, response) => {
+    const { initialMarkup, initialData } =
+      await serverRender(request);
+    response.render("index", {
+      initialMarkup,
+      initialData,
+    });
+  },
+);
 
 server.listen(config.PORT, config.HOST, () => {
-  console.info(
-    `express is listening to ${config.SERVER_URL}`,
-    "free memory:  ",
-    os.freemem() / 1024 / 1024,
-  );
+  console.info(`express is listening to ${config.SERVER_URL}`);
 });

@@ -24,12 +24,14 @@ body {
   color: #0000ee;
 }
 
-.contest-preview {
+.recipe-preview {
   margin: 1rem;
   border: thin solid #ccc;
 }
 
-.contest-preview .category {
+.recipe-preview .category {
+  display: flex;
+  justify-content: space-between;
   border-bottom: thin solid #ccc;
   padding: 0.5rem;
   font-weight: bold;
@@ -37,36 +39,37 @@ body {
   background-color: #eee;
 }
 
-.contest-preview .contest {
+.recipe-preview .recipe {
   color: #333;
   padding: 0.5rem;
 }
 
-.contest .title {
+.recipe .title {
   border: thin solid #ccc;
   padding: 0.5rem;
   font-weight: bold;
   background-color: #eee;
 }
 
-.contest .description,
-.contest .body {
+.recipe .description,
+.recipe .body {
   border: thin solid #ccc;
   border-top: unset;
   padding: 1rem;
   margin-bottom: 2rem;
 }
 
-.contest .body .list .item {
+.recipe .body .list .item {
   margin: 0.5rem;
 }
 
-.contest .body form {
+.recipe .body form {
   margin: 0.25rem;
 }
 
 form input,
-form textarea {
+form textarea,
+form select {
   width: 300px;
   padding: 0.5rem;
   margin-top: 0.5rem;
@@ -83,21 +86,26 @@ form button {
   border-radius: 0.25rem;
 }
 
-.add-new-contest form {
+.add-new-recipe form {
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.add-new-contest input,
-.add-new-contest textarea {
+.add-new-recipe input,
+.add-new-recipe textarea,
+.add-new-recipe select {
   display: block;
   margin-top: 1rem;
 }
 
-.add-new-contest .link {
+.add-new-recipe .link {
   font-size: 1.2rem;
   margin: 2rem auto;
+  text-align: center;
+}
+
+.align-center {
   text-align: center;
 }
