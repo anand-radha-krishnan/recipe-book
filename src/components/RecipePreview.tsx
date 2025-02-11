@@ -3,7 +3,8 @@ import React from "react";
 interface RecipePreviewProps {
   //   TODO: Add type for recipe
   recipe: any;
-  onRecipeClick: () => any;
+  onRecipeClick: (id: string) => any;
+  onRecipeDelete: (id: string) => any;
 }
 
 export const RecipePreview: React.FC<RecipePreviewProps> = ({

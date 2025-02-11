@@ -2,7 +2,16 @@ import React, { useEffect, useState } from "react";
 import { fetchRecipe } from "../api-client";
 import Header from "./Header";
 
-export const Recipe = ({ initialRecipe, onRecipeListClick }) => {
+interface RecipeProps {
+  initialRecipe: any;
+  onRecipeListClick: () => void;
+  children: any;
+}
+
+export const Recipe = ({
+  initialRecipe,
+  onRecipeListClick,
+}: RecipeProps) => {
   const [recipe, setRecipe] = useState(initialRecipe);
 
   useEffect(() => {
@@ -19,7 +28,7 @@ export const Recipe = ({ initialRecipe, onRecipeListClick }) => {
   };
 
   return (
-    <>
+    <div>
       <a
         href="/"
         className="link"
@@ -35,6 +44,6 @@ export const Recipe = ({ initialRecipe, onRecipeListClick }) => {
           <h4>Procedure: </h4> {recipe?.procedure}
         </div>
       </div>
-    </>
+    </div>
   );
 };

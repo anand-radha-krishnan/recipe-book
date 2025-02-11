@@ -11,25 +11,27 @@ export const AddRecipe = ({ refetchRecipes }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    startTransition(async () => {
-      const newRecipeName = event.target.newRecipeName?.value;
-      const newRecipeIngredients =
-        event.target.newRecipeIngredients?.value;
-      const newRecipeCategory =
-        event.target.newRecipeCategory?.value;
-      const newRecipeProcedure =
-        event.target.newRecipeProcedure?.value;
+    startTransition(() => {
+      async () => {
+        const newRecipeName = event.target.newRecipeName?.value;
+        const newRecipeIngredients =
+          event.target.newRecipeIngredients?.value;
+        const newRecipeCategory =
+          event.target.newRecipeCategory?.value;
+        const newRecipeProcedure =
+          event.target.newRecipeProcedure?.value;
 
-      await addNewRecipe({
-        newRecipeName,
-        newRecipeIngredients,
-        newRecipeCategory,
-        newRecipeProcedure,
-      });
+        await addNewRecipe({
+          newRecipeName,
+          newRecipeIngredients,
+          newRecipeCategory,
+          newRecipeProcedure,
+        });
 
-      refetchRecipes();
+        refetchRecipes();
 
-      clearForm(event);
+        clearForm(event);
+      };
     });
   };
 
@@ -44,7 +46,6 @@ export const AddRecipe = ({ refetchRecipes }) => {
               type="text"
               required
               id="newRecipeName"
-              label="ds"
               placeholder="New recipe name"
             />
           </div>
